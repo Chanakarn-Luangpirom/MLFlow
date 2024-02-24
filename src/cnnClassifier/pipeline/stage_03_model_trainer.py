@@ -1,7 +1,7 @@
-from src.cnnClassifier.config.configuration import ConfigurationManager
-from src.cnnClassifier.components.model_trainer import Training
-from src.cnnClassifier import logger
-
+from cnnClassifier.config.configuration import ConfigurationManager
+from cnnClassifier.components.model_trainer import Training
+from cnnClassifier import logger
+import os
 
 
 STAGE_NAME = "Training Stage"
@@ -22,6 +22,9 @@ class ModelTrainingPipeline:
 
 if __name__ == '__main__':
     try:
+        os.chdir('../')
+        os.chdir('../')
+        os.chdir('../')
         logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
         obj = ModelTrainingPipeline()
         obj.main()

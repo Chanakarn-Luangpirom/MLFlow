@@ -1,11 +1,11 @@
-from src.cnnClassifier.constants import *
-from src.cnnClassifier.utils.common import read_yaml, create_directories
-from src.cnnClassifier.entity.config_entity import (DataIngestionConfig, PrepareBaseModelConfig, TrainingConfig)
+from cnnClassifier.constants import *
+from cnnClassifier.utils.common import read_yaml, create_directories
+from cnnClassifier.entity.config_entity import (DataIngestionConfig, PrepareBaseModelConfig, TrainingConfig,EvaluationConfig)
 import os
 
 class ConfigurationManager:
     def __init__(self,config_filepath = CONFIG_FILE_PATH,params_filepath = PARAMS_FILE_PATH):
-
+        print(config_filepath)
         self.config = read_yaml(config_filepath)
         self.params = read_yaml(params_filepath)
 
@@ -66,5 +66,18 @@ class ConfigurationManager:
             params_image_size=params.IMAGE_SIZE
         )
 
-        return training_config   
+        return training_config 
+
+    def get_evaluation_config(self) -> EvaluationConfig:
+        config = self.config.evaluation
+
+        eval_config = EvaluationConfig(
+            path_of_model=config.trained_model_path,
+            training_data=config.training_data,
+            mlflow_uri=config.mlflow_uri,
+            all_params=self.params,
+            params_image_size=self.params.IMAGE_SIZE,
+            params_batch_size=self.params.BATCH_SIZE
+        )
+        return eval_config
       
