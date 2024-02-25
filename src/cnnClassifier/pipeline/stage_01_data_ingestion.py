@@ -1,6 +1,7 @@
 from cnnClassifier.config.configuration import ConfigurationManager
 from cnnClassifier.components.data_ingestion import DataIngestion
 from cnnClassifier import logger
+import os
 
 STAGE_NAME = "Data Ingestion Stage"
 
@@ -18,9 +19,7 @@ class DataIngestionTrainingPipeline:
 
 if __name__ == '__main__':
     try:
-        os.chdir('../')
-        os.chdir('../')
-        os.chdir('../')
+        print('Current',os.getcwd())
         logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
         obj = DataIngestionTrainingPipeline()
         obj.main()

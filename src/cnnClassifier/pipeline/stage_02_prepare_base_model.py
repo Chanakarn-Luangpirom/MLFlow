@@ -1,6 +1,7 @@
 from cnnClassifier.config.configuration import ConfigurationManager
 from cnnClassifier.components.prepare_base_model import PrepareBaseModel
 from cnnClassifier import logger
+import os
 
 STAGE_NAME = "Prepare Base Model Stage"
 
@@ -19,9 +20,7 @@ class PrepareBaseModelPipeline:
 
 if __name__ == '__main__':
     try:
-        os.chdir('../')
-        os.chdir('../')
-        os.chdir('../')
+        print('Current',os.getcwd())
         logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
         obj = PrepareBaseModelPipeline()
         obj.main()

@@ -20,9 +20,7 @@ class ModelEvaluationPipeline:
 
 if __name__ == '__main__':
     try:
-        os.chdir('../')
-        os.chdir('../')
-        os.chdir('../')
+        print('Current',os.getcwd())
         logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
         obj = ModelEvaluationPipeline()
         obj.main()
