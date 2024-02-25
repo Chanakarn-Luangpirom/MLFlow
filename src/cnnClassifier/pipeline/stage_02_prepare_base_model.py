@@ -19,6 +19,9 @@ class PrepareBaseModelPipeline:
 
 if __name__ == '__main__':
     try:
+        os.chdir('../')
+        os.chdir('../')
+        os.chdir('../')
         logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
         obj = PrepareBaseModelPipeline()
         obj.main()
