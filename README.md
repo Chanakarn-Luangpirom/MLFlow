@@ -1,5 +1,5 @@
 # End to End Deep Learning & MLOps (Following the tutoral from DSwithBappy)
-This repository contains an implementation of GPT from scratch, following a tutorial provided by [DSwithBappy](https://www.youtube.com/watch?v=-NOIWzjJK-4&t=934s&ab_channel=DSwithBappy).
+This repository contains an implementation of an image classification model deployment, following a tutorial provided by [DSwithBappy](https://www.youtube.com/watch?v=-NOIWzjJK-4&t=934s&ab_channel=DSwithBappy).
 
 ## Workflows
 
